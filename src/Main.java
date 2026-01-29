@@ -1,48 +1,23 @@
-import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    static void main() throws IOException {
 
-        Scanner sc = new Scanner(System.in);
+        var occupants = new ArrayList<String>();
+        occupants.add("Fola");
+        occupants.add("Sola");
+        occupants.add("Demola");
+        occupants.add("Ola");
 
-        System.out.println("Please enter a first number: ");
-        double fNum = sc.nextDouble();
-
-        System.out.println("Please input an operator (+, *, / -): ");
-        char operator = sc.next().charAt(0);
-
-        System.out.println("Please enter a second number: ");
-        double lNum = sc.nextDouble();
-
-        double result;
-        switch (operator) {
-            case '+':
-                result = fNum + lNum;
-                break;
-            case '-':
-                result = fNum - lNum;
-                break;
-
-            case '*':
-                result = fNum * lNum;
-                break;
-
-            case '/':
-                if (lNum == 0) {
-                    System.out.println("Cannot divide by zero");
-                    return;
-                }
-                result = fNum / lNum;
-                break;
-            default:
-                System.out.println("Invalid operator");
-                return;
-
+        var iterator= occupants.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
         }
-        System.out.println("Answer is: " + result);
-
 
     }
-
 }
+
+
